@@ -2,6 +2,8 @@
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
+NAME; S.D.SURENDAR, REG.NO:24901073
+
 **AIM:**
 
 To design a Full Adder and Full Subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -37,19 +39,56 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+\\
+FULL ADDER:
+
+  ![Screenshot 2024-12-11 102334](https://github.com/user-attachments/assets/7983e997-caad-4a91-88e5-7fcf8b1e3f45)
+  
+FULL SUBTRACTOR:
+
+  ![Screenshot 2024-12-11 102425](https://github.com/user-attachments/assets/4e73069f-f78a-4a18-b8d5-0dcae025aee0)
+
 
 **Procedure**
+Type the program in Quartus software.
+Compile and run the program.
+Generate the RTL schematic and save the logic diagram.
+Create nodes for inputs and outputs to generate the timing diagram.
+For different input combinations generate the timing diagram.
 
-Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+FULL ADDER:
+module fulladder(a,b,c,sum,carry); input a,b,c; output sum,carry; wire w1,w2,w3; assign
+sum=a^b^c; assign w1=a&b; assign w2=a&b; assign w3=a&b; assign carry=w1|w2|w3;
+endmodule
+FULL SUBTRACTOR:
+module fullsub(a,b,bin,diff,borr); input a,b,bin; output diff,borr; wire w1,w2,w3,w4,w5,w6;
+xor g1(diff,a,b,bin); and g2(w4,w2,b); and g3(w5,w1,b); and g4(w6,b,bin); or
+g5(borr,w4,w5,w6); endmodule
 
 **RTL Schematic**
+FULL ADDER:
+\\\
+  ![Screenshot 2024-12-11 101626](https://github.com/user-attachments/assets/7aab30a0-db8f-4723-a4c9-c915d160b118)
+\\\
+FULL SUBTRACTOR:
+\\\
+  ![Screenshot 2024-12-11 101639](https://github.com/user-attachments/assets/b9e1dd1a-49ed-4f3a-930b-b42a6b5a7aae)
+
 
 **Output Timing Waveform**
+
+FULL ADDER:
+\\\
+
+  ![Screenshot 2024-12-11 101654](https://github.com/user-attachments/assets/71b8a84b-74f1-4000-8a55-a58d738ea430)
+\\\
+FULL SUBTRACTOR:
+\\\
+
+  ![Screenshot 2024-12-11 101709](https://github.com/user-attachments/assets/6260a014-73c0-4223-a9bf-08fcf9db9bfa)
 
 **Result:**
 
